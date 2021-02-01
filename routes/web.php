@@ -17,6 +17,21 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-})->middleware(['auth.shopify'])->name('home');
+})->middleware(['auth.shopify'])->name('home');*/
+
+Route::get('/login', function () {
+    if (Auth::user()) {
+        return redirect()->route('home');
+    }
+    return view('login');
+})->name('login');
+
+Route::middleware(['auth.shopify'])->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    })->name('home');
+
+    // Other routes that need the shop user
+});
