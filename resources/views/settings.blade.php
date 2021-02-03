@@ -3,11 +3,12 @@
 @section('content')
     <!-- You are: (shop domain name) -->
     <p>You are: {{ Auth::user()->name }}</p>
+
+    Settings
 @endsection
 
 @section('scripts')
     @parent
-
     <script type="text/javascript">
         var AppBridge = window['app-bridge'];
         var actions = AppBridge.actions;
@@ -15,7 +16,7 @@
         var Button = actions.Button;
         var Redirect = actions.Redirect;
         var titleBarOptions = {
-            title: 'Welcome',
+            title: 'Setting',
         };
         var myTitleBar = TitleBar.create(app, titleBarOptions);
     </script>

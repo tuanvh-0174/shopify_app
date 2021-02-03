@@ -13,6 +13,8 @@
         <div class="app-wrapper">
             <div class="app-content">
                 <main role="main">
+                    @include('partials.navbar')
+
                     @yield('content')
                 </main>
             </div>
