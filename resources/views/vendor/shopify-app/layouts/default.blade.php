@@ -6,6 +6,8 @@
 
         <title>{{ \Osiset\ShopifyApp\getShopifyConfig('app_name') }}</title>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <!-- alpine js -->
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         @yield('styles')
     </head>
 
